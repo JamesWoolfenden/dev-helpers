@@ -12,4 +12,3 @@ if (!(test-path $installdir))
 }
 
 mv aws-vault-windows-386.exe $installdir\aws-vault.exe -force
-
