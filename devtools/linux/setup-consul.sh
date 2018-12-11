@@ -2,8 +2,8 @@
 set -exo
 curl https://keybase.io/hashicorp/pgp_keys.asc | gpg --import
 apt-get install unzip
-VERSION="1.2.2"
-TOOL="packer"
+VERSION="1.4.0"
+TOOL="consul"
 EDITION="linux_amd64"
 cd /usr/local/bin
 # Download the binary and signature files.
