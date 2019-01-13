@@ -19,7 +19,7 @@ if (!(test-path $installdir))
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
 Invoke-WebRequest -Uri $url -outfile $zipfile
 Unzip "$PSScriptRoot\$zipfile" $installdir
-rm "$PSScriptRoot\$zipfile"
+Remove-Item "$PSScriptRoot\$zipfile"
 
 & "$installdir\tflint.exe"
-Write-host "Now Update your path"
+Write-Output "Now Update your path"
