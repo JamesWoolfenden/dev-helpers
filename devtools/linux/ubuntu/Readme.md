@@ -1,8 +1,12 @@
 # Install Golang
-```apt install golang```
 
-# build the tools
+```cli
+apt install golang
 ```
+
+## build the tools
+
+```cli
 go get github.com/99designs/aws-vault
 go get github.com/hashicorp/terraform
 go get github.com/hashicorp/packer
