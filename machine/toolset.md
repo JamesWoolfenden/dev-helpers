@@ -19,6 +19,7 @@ python| 3.7.2||cinst python
 vscode| 1.31.1||cinst vscode
 saml2aws|2.13||cinst saml2aws
 jq|1.5||cinst jq
+dos2unix|-|sudo apt install dos2unix|n/a
 poshgit|n/a||cinst poshgit
 beyondcompare|4.2.9||cinst beyondcompare
 git-remote-codecommit|||
