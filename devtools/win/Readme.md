@@ -1,8 +1,10 @@
 # Install Golang
+
 ```choco install golang```
 
-# build the tools
-```
+## build the tools
+
+```golang
 go get github.com/99designs/aws-vault
 go get github.com/hashicorp/terraform
 go get github.com/hashicorp/packer
