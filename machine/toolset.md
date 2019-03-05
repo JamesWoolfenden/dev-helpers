@@ -22,7 +22,7 @@ jq|1.5||cinst jq
 dos2unix|-|sudo apt install dos2unix|n/a
 poshgit|n/a||cinst poshgit
 beyondcompare|4.2.9||cinst beyondcompare
-git-remote-codecommit|||
+git-remote-codecommit||sudo pip install git-remote-codecommit|pip install git-remote-codecommit
 bash-git-prompt||https://github.com/magicmonty/bash-git-prompt|n/a
 
 ## linux
