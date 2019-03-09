@@ -1,20 +1,20 @@
 curl -s https://api.github.com/repos/$1/$2/releases |  jq ".[0].assets | map(select(.name == \"$3\")) | .[0].browser_download_url"
 
 function get_download_url {
-	wget -q -nv -O- https://api.github.com/repos/$1/$2/releases/latest 2>/dev/null |  jq -r '.assets[] | select(.browser_download_url | contains("linux-amd64")) | .browser_download_url'
+    wget -q -nv -O- https://api.github.com/repos/$1/$2/releases/latest 2>/dev/null |  jq -r '.assets[] | select(.browser_download_url | contains("linux-amd64")) | .browser_download_url'
 }
 
 function install_binary {
-	URL=$(get_download_url $1 $2)
-	mkdir -p ~/bin
-	BASE=$(basename $URL)
-	wget -q -nv -O $BASE $URL
-	if [ ! -f $BASE ]; then
-		echo "Didn't download $URL properly.  Where is $BASE?"
-		exit 1
-	fi
-	mv $BASE ~/bin
-	chmod +x ~/bin/$BASE
+    URL=$(get_download_url $1 $2)
+    mkdir -p ~/bin
+    BASE=$(basename $URL)
+    wget -q -nv -O $BASE $URL
+    if [ ! -f $BASE ]; then
+        echo "Didn't download $URL properly.  Where is $BASE?"
+        exit 1
+    fi
+    mv $BASE ~/bin
+    chmod +x ~/bin/$BASE
 }
 
 
