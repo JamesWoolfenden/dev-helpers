@@ -1,0 +1,17 @@
+awscli
+azure-cli
+beyondcompare
+git
+golang
+jq
+make
+nodejs
+nvw-windows
+packer
+poshgit
+python
+python
+ruby
+saml2aws
+terraform
+vscode

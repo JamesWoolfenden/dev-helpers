@@ -26,6 +26,8 @@ Installing Docker fot windows
 ## vscode extensions
 
 - extensions sync
+VSCode settings
+https://marketplace.visualstudio.com/items?itemName=Shan.code-settings-sync
 
 ## sync choco
 

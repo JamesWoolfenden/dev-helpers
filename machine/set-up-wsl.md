@@ -23,7 +23,7 @@ sudo mount -a
 ```cli
 sudo apt upgrade
 sudo apt update
-sudo apt install -y awscli
+sudo apt install -y awscli/c/
 ```
 
 cp -r /c/Users/james.woolfenden/.ssh/ ~/.ssh/

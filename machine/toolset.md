@@ -15,6 +15,7 @@ git|||
 golang | 1.11.5 ||
 make|
 nodejs|||
+nvm|1.1.7||cinst nvm
 python| 3.7.2||cinst python
 vscode| 1.31.1||cinst vscode
 saml2aws|2.13||cinst saml2aws
@@ -28,14 +29,14 @@ bash-git-prompt||https://github.com/magicmonty/bash-git-prompt|n/a
 ## linux
 
 ## ruby on windows
-
 git clone git@github.com:rubygems/rubygems.git
 cd rubygems|git submodule update --init
 ruby setup.rb
 
 ## npm
-
+Get a list of installed global packages
 ```npm list -g --depth 0```
+I've put the output from my machine at /machine/npm-global
 
 ## 18.08
 
