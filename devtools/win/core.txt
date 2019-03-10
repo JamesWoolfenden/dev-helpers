@@ -6,7 +6,7 @@ golang
 jq
 make
 nodejs
-nvw-windows
+nvw
 packer
 poshgit
 python
