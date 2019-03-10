@@ -35,7 +35,7 @@ ruby setup.rb
 
 ## npm
 
-npm list -g --depth 0
+```npm list -g --depth 0```
 
 ## 18.08
 

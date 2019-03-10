@@ -1,5 +1,10 @@
-$url = "https://github.com/wata727/tflint/releases/download/v0.7.0/tflint_windows_amd64.zip"
-$zipfile="tflint_windows_amd64.zip"
+<# This is now available as a choco package#>
+
+$version= "0.7.0"
+$zipfile= "tflint_windows_amd64.zip"
+$url    = "https://github.com/wata727/tflint/releases/download/v$($Version)/$zipfile"
+
+Write=Output "$(get-date) - Getting $url"
 
 Add-Type -AssemblyName System.IO.Compression.FileSystem
 function Unzip
@@ -22,4 +27,4 @@ Unzip "$PSScriptRoot\$zipfile" $installdir
 Remove-Item "$PSScriptRoot\$zipfile"
 
 & "$installdir\tflint.exe"
-Write-Output "Now Update your path"
+Write-Output "$(get-date) - Update your path"
