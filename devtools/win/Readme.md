@@ -13,6 +13,8 @@ Installing Docker fot windows
 
 - Old way - use ssh that comes with git.
 - enable windows feature
+- create ssh key and add to ssh-agent.
+- add to profile in bash and powershell
 
 ## wsl
 
@@ -30,6 +32,7 @@ VSCode settings
 https://marketplace.visualstudio.com/items?itemName=Shan.code-settings-sync
 
 ## sync choco
+sync-packages.ps1
 
 ## set-up for saml2aws
 
