@@ -5,11 +5,9 @@ git
 golang
 jq
 make
-nodejs
-nvw
+nvm
 packer
 poshgit
-python
 python
 ruby
 saml2aws
