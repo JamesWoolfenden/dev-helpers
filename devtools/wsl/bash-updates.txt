@@ -1,0 +1,20 @@
+follow https://nickjanetakis.com/blog/setting-up-docker-for-windows-and-wsl-to-work-flawlessly
+
+Useful
+https://docs.microsoft.com/en-us/virtualization/windowscontainers/manage-docker/configure-docker-daemon
+
+# change docker endpoint
+echo "export DOCKER_HOST=tcp://localhost:2375" >> ~/.bashrc && source ~/.bashrc
+
+
+## wsl config
+sudo vi /etc/wsl.conf
+
+# Now make it look like this and save the file when you're done:
+[automount]
+root = /
+options = "metadata"
+
+
+# restart LxssManager
+net restart LxssManager
