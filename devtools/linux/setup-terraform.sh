@@ -2,7 +2,7 @@
 set -exo
 curl https://keybase.io/hashicorp/pgp_keys.asc | gpg --import
 apt-get install unzip
-VERSION="0.12.0"
+VERSION="0.12.2"
 TOOL="terraform"
 EDITION="linux_amd64"
 cd /usr/local/bin
