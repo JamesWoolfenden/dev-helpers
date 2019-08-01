@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 curl https://keybase.io/hashicorp/pgp_keys.asc | gpg --import
 apt-get install unzip
-VERSION="0.12.4"
+VERSION="0.12.6"
 TOOL="terraform"
 EDITION="linux_amd64"
 cd /usr/local/bin
