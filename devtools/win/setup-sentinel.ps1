@@ -1,8 +1,6 @@
-<# This is now available as a choco package#>
-
-$version= "0.8.0"
-$zipfile= "tflint_windows_amd64.zip"
-$url    = "https://github.com/wata727/tflint/releases/download/v$($Version)/$zipfile"
+$version= "0.10.4"
+$zipfile= "sentinel_$($version)_windows_amd64.zip"
+$url    = "https://releases.hashicorp.com/sentinel/$($version)/$zipfile"
 
 Write-Output "$(get-date) - Getting $url"
 
@@ -15,10 +13,13 @@ function Unzip
 }
 
 
-$installdir ="C:\tools\tflint"
+$installdir ="C:\tools\sentinel"
 if (!(test-path $installdir))
 {
     mkdir $installdir
+}
+else{
+    Remove-Item "$installdir\sentinel.exe" -ErrorAction SilentlyContinue
 }
 
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
@@ -26,5 +27,5 @@ Invoke-WebRequest -Uri $url -outfile $zipfile
 Unzip "$PSScriptRoot\$zipfile" $installdir
 Remove-Item "$PSScriptRoot\$zipfile"
 
-& "$installdir\tflint.exe"
+& "$installdir\sentinel.exe" --version
 Write-Output "$(get-date) - Update your path"
