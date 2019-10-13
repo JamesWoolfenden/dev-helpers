@@ -1,5 +1,5 @@
 $version="0.6.0"
-$url = "https://github.com/segmentio/terraform-docs/releases/download/v0.6.0/terraform-docs-v$($version)-windows-amd64.exe"
+$url = "https://github.com/segmentio/terraform-docs/releases/download/v$($version)/terraform-docs-v$($version)-windows-amd64.exe"
 Write-Output "$(get-date) - Getting $url"
 
 $installdir ="C:\tools\terraform-docs"
