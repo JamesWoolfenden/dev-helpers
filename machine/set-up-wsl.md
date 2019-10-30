@@ -48,8 +48,8 @@ git config --global user.name "James Woolfenden"
 ### profile
 
 function loginaws {
-  saml2aws --skip-prompt --username james.woolfenden@centrica.com --password <password> --role arn:aws:iam::<account_no>:role/DevTest-DevOps login --profile saml --force
+  saml2aws --skip-prompt --username james.woolfenden@examplea.com --password <password> --role arn:aws:iam::<account_no>:role/DevTest-DevOps login --profile saml --force
 export AWS_PROFILE="saml"
 }
 
-<https://sts.centricaplc.com/adfs/ls/idpinitiatedsignon>
+<https://sts.examplea.com/adfs/ls/idpinitiatedsignon>
