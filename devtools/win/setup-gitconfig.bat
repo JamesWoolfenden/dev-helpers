@@ -4,7 +4,7 @@ git config --global difftool.bc3.path "c:/Program Files/Beyond Compare 4/bcomp.e
 git config --global merge.tool bc3
 git config --global mergetool.bc3.path "c:/Program Files/Beyond Compare 4/bcomp.exe"
 git config --global core.symlinks false
-git config --global core.autocrlf true
+git config --global core.autocrlf input
 git config --global core.fscache true
 git config --global color.diff auto
 git config --global color.status auto
