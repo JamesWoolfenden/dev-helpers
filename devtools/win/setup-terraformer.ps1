@@ -1,10 +1,11 @@
-$version="0.8.1"
+$version="0.8.5"
 $name="terraformer"
-$url = "https://github.com/GoogleCloudPlatform/$name/releases/download/$version/$name-windows-amd64.exe"
+$flavour=$name+"-all"
+$url = "https://github.com/GoogleCloudPlatform/$name/releases/download/$version/$flavour-windows-amd64.exe"
 
 Write-Output "$(get-date) - Getting $url"
 
-$installdir ="C:\tools\$name"
+$installdir ="C:\tools\bin"
 
 if (!(test-path $installdir))
 {
