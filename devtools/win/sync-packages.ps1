@@ -43,6 +43,3 @@ if ($updatecore)
 {
   Copy-Item $filename .\core.txt
 }
-
-
-
