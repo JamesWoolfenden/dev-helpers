@@ -1,2 +1,2 @@
 python -m pip install --upgrade pip
-pip install pre-commit
+pip3 install pre-commit
