@@ -5,7 +5,8 @@ Find inside a few helpers scripts to get you up and running with a basic suite o
 There is also a pre-commit sample file in the root. To install this locally run:
 
 ```cli
-pre-commit install ```
+pre-commit install
+```
 
 The Hooks used are suitable for cross platform terraform use.
 
