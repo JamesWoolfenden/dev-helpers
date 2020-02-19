@@ -12,7 +12,7 @@ if (!(test-path $installdir))
 try{
     [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
     Invoke-WebRequest -Uri $url -outfile "$installdir\terraform-docs.exe"
-    & "$installdir\terraform-docs.exe" -version
+    & "$installdir\terraform-docs.exe" --version
     Write-Output "$(get-date) - Now Update your path"
 }
 catch{
