@@ -2,8 +2,8 @@
 set -exo
 curl https://keybase.io/hashicorp/pgp_keys.asc | gpg --import
 apt-get install unzip
-VERSION="0.12.21"
-TOOL="terraform"
+VERSION="1.5.4"
+TOOL="packer"
 EDITION="linux_amd64"
 cd /usr/local/bin
 # Download the binary and signature files.
