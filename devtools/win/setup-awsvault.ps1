@@ -1,4 +1,4 @@
-$version = "5.3.1"
+$version = "5.3.2"
 $url = "https://github.com/99designs/aws-vault/releases/download/v$version/aws-vault-windows-386.exe"
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
 
