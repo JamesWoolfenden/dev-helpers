@@ -2,8 +2,8 @@
 set -exo
 curl https://keybase.io/hashicorp/pgp_keys.asc | gpg --import
 apt-get install unzip
-VERSION="0.12.24"
-TOOL="terraform"
+VERSION="1.3.5"
+TOOL="vault"
 EDITION="linux_amd64"
 cd /usr/local/bin
 # Download the binary and signature files.
@@ -28,3 +28,5 @@ rm "${TOOL}_${VERSION}_${EDITION}_SHA256SUMS"
 rm "${TOOL}_${VERSION}_SHA256SUMS.sig"
 
 "${TOOL}" --version
+
+vault -autocomplete-install
