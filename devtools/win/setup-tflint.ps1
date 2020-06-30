@@ -1,6 +1,6 @@
 <# This is now available as a choco package#>
 
-$version= "0.8.0"
+$version= "0.17.0"
 $zipfile= "tflint_windows_amd64.zip"
 $url    = "https://github.com/wata727/tflint/releases/download/v$($Version)/$zipfile"
 

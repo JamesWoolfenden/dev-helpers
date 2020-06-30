@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 set -exo
-VERSION="0.10.4"
+VERSION="0.15.5"
 PACKAGE="sentinel_${VERSION}_linux_amd64.zip"
 wget "https://releases.hashicorp.com/sentinel/${VERSION}/${PACKAGE}"
 unzip ${PACKAGE}
