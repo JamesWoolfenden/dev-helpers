@@ -1,8 +1,6 @@
-<# This is now available as a choco package#>
-
-$version= "0.17.0"
-$zipfile= "tflint_windows_amd64.zip"
-$url    = "https://github.com/wata727/tflint/releases/download/v$($Version)/$zipfile"
+$version= "2.8.0"
+$zipfile= "task_windows_amd64.zip"
+$url    = "https://github.com/go-task/task/releases/download/v$($Version)/$zipfile"
 
 Write-Output "$(get-date) - Getting $url"
 
@@ -15,7 +13,7 @@ function Unzip
 }
 
 
-$installdir ="C:\tools\tflint"
+$installdir ="C:\tools\bin\"
 if (!(test-path $installdir))
 {
     mkdir $installdir
@@ -26,5 +24,4 @@ Invoke-WebRequest -Uri $url -outfile $zipfile
 Unzip "$PSScriptRoot\$zipfile" $installdir
 Remove-Item "$PSScriptRoot\$zipfile"
 
-& "$installdir\tflint.exe"
-Write-Output "$(get-date) - Update your path"
+& "$installdir\task.exe" --version

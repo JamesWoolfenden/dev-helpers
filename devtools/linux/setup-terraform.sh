@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+set -exo
 curl https://keybase.io/hashicorp/pgp_keys.asc | gpg --import
 apt-get install unzip
 VERSION="0.13.3"
@@ -20,7 +21,7 @@ sed '/linux_amd64/!d' ${TOOL}_${VERSION}_SHA256SUMS > ${TOOL}_${VERSION}_${EDITI
 # Verify the SHASUM matches the binary.
 shasum -a 256 -c "${TOOL}_${VERSION}_${EDITION}_SHA256SUMS"
 
-unzip "${TOOL}_${VERSION}_linux_amd64.zip"
+unzip -o "${TOOL}_${VERSION}_linux_amd64.zip"
 rm "${TOOL}_${VERSION}_linux_amd64.zip"
 rm "${TOOL}_${VERSION}_SHA256SUMS"
 rm "${TOOL}_${VERSION}_${EDITION}_SHA256SUMS"
