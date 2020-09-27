@@ -1,5 +1,5 @@
-$version= "0.15.5"
-$tool   = "sentinel"
+$version= "0.13.0"
+$tool   = "terraform"
 $zipfile= "$($tool)_$($version)_windows_amd64.zip"
 $url    = "https://releases.hashicorp.com/$tool/$($version)/$zipfile"
 
