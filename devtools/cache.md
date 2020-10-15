@@ -10,7 +10,7 @@ Add-Content $env:APPDATA\terraform.rc "plugin_cache_dir   = `"$HOME\\.terraform.
 mkdir "$HOME/.terraform.d/plugin-cache"
 ```
 
-## *nix
+## *nix/ubuntu
 ```
 touch ~/.terraformrc
 echo plugin_cache_dir = \"$HOME/.terraform.d/plugin-cache\" >> ~/.terraformrc
