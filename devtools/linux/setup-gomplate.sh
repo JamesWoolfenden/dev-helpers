@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 set -exo
-VERSION="3.7.0"
-curl -L "https://github.com/hairyhenderson/gomplate/releases/download/v${VERSION}/gomplate_linux-amd64"  > /usr/local/bin/gomplate
+VERSION=$(lastversion gomplate)
+url="https://github.com/hairyhenderson/gomplate/releases/download/v${VERSION}/gomplate_linux-amd64"
+echo "Getting $url"
+curl -L  "$url" > /usr/local/bin/gomplate
 chmod +x /usr/local/bin/gomplate
 gomplate --version

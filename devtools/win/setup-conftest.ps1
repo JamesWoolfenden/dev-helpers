@@ -1,4 +1,4 @@
-$version= "0.21.0"
+$version= lastversion conftest
 $tool   = "conftest"
 $zipfile= "$($tool)_$($version)_Windows_x86_64.zip"
 $url    = "https://github.com/open-policy-agent/$tool/releases/download/v$($version)/$zipfile"
@@ -21,10 +21,11 @@ if (!(test-path $installdir))
     mkdir $installdir
 }
 else{
-    Remove-Item "$installdir\$tool.exe" -ErrorAction SilentlyContinue
+    Remove-Item "$installdir\*" -ErrorAction SilentlyContinue
 }
 
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
+write-host "$(get-date) - getting $version"
 Invoke-WebRequest -Uri $url -outfile $zipfile
 Unzip "$PSScriptRoot\$zipfile" $installdir
 Remove-Item "$PSScriptRoot\$zipfile"

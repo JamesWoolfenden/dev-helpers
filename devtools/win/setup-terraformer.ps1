@@ -1,4 +1,4 @@
-$version="0.8.6"
+$version=lastversion terraformer
 $name="terraformer"
 $flavour=$name+"-all"
 $url = "https://github.com/GoogleCloudPlatform/$name/releases/download/$version/$flavour-windows-amd64.exe"

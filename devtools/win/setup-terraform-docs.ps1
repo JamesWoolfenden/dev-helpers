@@ -1,4 +1,4 @@
-$version="0.9.1"
+$version=lastversion terraform-docs
 $url = "https://github.com/segmentio/terraform-docs/releases/download/v$($version)/terraform-docs-v$($version)-windows-amd64.exe"
 Write-Output "$(get-date) - Getting $url"
 

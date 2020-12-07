@@ -1,4 +1,4 @@
-$version= "2.8.0"
+$version= lastversion task
 $zipfile= "task_windows_amd64.zip"
 $url    = "https://github.com/go-task/task/releases/download/v$($Version)/$zipfile"
 

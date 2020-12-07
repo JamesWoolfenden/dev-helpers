@@ -1,4 +1,4 @@
-$version= "0.5.1"
+$version= lastversion kind
 $name   = "kind"
 $url    = "https://github.com/kubernetes-sigs/$name/releases/download/v$version/$name-windows-amd64"
 

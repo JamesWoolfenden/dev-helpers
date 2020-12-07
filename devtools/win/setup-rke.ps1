@@ -1,4 +1,4 @@
-$version="v1.1.4"
+$version=lastversion rke
 $name   ="rke"
 
 $url = "https://github.com/rancher/$name/releases/download/$version/$($name)_windows-amd64.exe"

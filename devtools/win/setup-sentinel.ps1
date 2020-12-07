@@ -1,4 +1,4 @@
-$version= "0.15.5"
+$version= "0.16.1"
 $tool   = "sentinel"
 $zipfile= "$($tool)_$($version)_windows_amd64.zip"
 $url    = "https://releases.hashicorp.com/$tool/$($version)/$zipfile"

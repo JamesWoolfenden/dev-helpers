@@ -1,4 +1,4 @@
-$version = "0.4.6"
+$version = lastversion talisman
 $filename= "talisman_windows_amd64.exe"
 $url = "https://github.com/thoughtworks/talisman/releases/download/v$version/$filename"
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12

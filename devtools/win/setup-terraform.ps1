@@ -1,4 +1,4 @@
-$version= "0.13.0"
+$version= lastversion terraform
 $tool   = "terraform"
 $zipfile= "$($tool)_$($version)_windows_amd64.zip"
 $url    = "https://releases.hashicorp.com/$tool/$($version)/$zipfile"

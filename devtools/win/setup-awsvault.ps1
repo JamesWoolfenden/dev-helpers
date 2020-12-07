@@ -1,5 +1,6 @@
-$version = "5.4.4"
+$version = lastversion aws-vault
 $url = "https://github.com/99designs/aws-vault/releases/download/v$version/aws-vault-windows-386.exe"
+write-host "$(get-date) - getting $version"
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
 
 Invoke-WebRequest $url -outfile aws-vault-windows-386.exe
