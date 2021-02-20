@@ -21,12 +21,12 @@ brew install pycharm-ce
 brew install docker
 brew install macpass
 brew install packer
-brew install graphviz 
+brew install graphviz
 brew install jq
 brew install google-cloud-sdk
 brew install kubernetes-helm
 brew install awscli
-brew install checkov			
+brew install checkov
 brew install hub
 brew install dos2unix
 brew install shellcheck
@@ -35,7 +35,7 @@ brew install terraformer
 brew install powershell
 
 tfenv install 14.4
-tfenv use 0.14.4 
+tfenv use 0.14.4
 echo "export PATH=~/Library/Python/3.7/bin:\$PATH" >> ~/.bash_profile
 wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | bash
 source ~/.zshrc
