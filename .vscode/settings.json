@@ -1,9 +1,9 @@
 {
-    "cSpell.words": [
-        "awsvault",
-        "saml",
-        "segmentio"
-    ],
-    "editor.autoClosingBrackets": "never",
-    "editor.autoClosingQuotes": "never"
+  "cSpell.words": [
+    "awsvault",
+    "saml",
+    "segmentio"
+  ],
+  "editor.autoClosingBrackets": "never",
+  "editor.autoClosingQuotes": "never"
 }
