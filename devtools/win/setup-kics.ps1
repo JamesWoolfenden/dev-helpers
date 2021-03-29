@@ -20,7 +20,7 @@ if (!(test-path $installdir))
     mkdir $installdir
 }
 else{
-    Remove-Item "$installdir\*" -ErrorAction SilentlyContinue
+    Remove-Item "$installdir\kics.exe" -ErrorAction SilentlyContinue
 }
 
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
