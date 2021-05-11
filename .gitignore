@@ -6,3 +6,4 @@
 *REMOTE*
 *.gz
 *.gz.1
+.vscode/
