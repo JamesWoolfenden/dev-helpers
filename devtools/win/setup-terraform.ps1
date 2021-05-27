@@ -1,20 +1,11 @@
-$version= lastversion terraform
-$tool   = "terraform"
-$zipfile= "$($tool)_$($version)_windows_amd64.zip"
-$url    = "https://releases.hashicorp.com/$tool/$($version)/$zipfile"
-
-Write-Output "$(get-date) - Getting $url"
+$tool="terraform"
+$version=lastversion $tool
+$url="https://releases.hashicorp.com/terraform/$($version)/terraform_$($version)_windows_amd64.zip"
 
 Add-Type -AssemblyName System.IO.Compression.FileSystem
-function Unzip
-{
-    param([string]$zipfile, [string]$outpath)
+$installdir="C:\tools\bin"
+$zipfile=".\terraform.zip"
 
-    [System.IO.Compression.ZipFile]::ExtractToDirectory($zipfile, $outpath)
-}
-
-
-$installdir ="C:\tools\$tool"
 if (!(test-path $installdir))
 {
     mkdir $installdir
@@ -23,10 +14,19 @@ else{
     Remove-Item "$installdir\$tool.exe" -ErrorAction SilentlyContinue
 }
 
-[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
-Invoke-WebRequest -Uri $url -outfile $zipfile
-Unzip "$PSScriptRoot\$zipfile" $installdir
-Remove-Item "$PSScriptRoot\$zipfile"
+try {
+    [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
+    Invoke-WebRequest -Uri $url -outfile $zipfile
+    Write-Information "Downloaded $url to $zipfile"
+}
+catch {
+    Write-Error "Failed to download $url to $zipfile"
+    exit 1
+}
 
-& "$installdir\$tool.exe" --version
-Write-Output "$(get-date) - Update your path"
+tar -xvf $zipfile
+Remove-Item $zipfile
+write-output "moving to $installdir\$tool.exe"
+Move-Item "$tool*" "$installdir\$tool.exe"
+
+& "$tool.exe" --version
