@@ -7,3 +7,4 @@
 *.gz
 *.gz.1
 .vscode/
+.DS_Store
