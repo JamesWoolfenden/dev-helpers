@@ -14,17 +14,21 @@ function Unzip
 }
 
 
-$installdir ="C:\tools\bin\"
+$installdir ="C:\tools\bin"
 if (!(test-path $installdir))
 {
     mkdir $installdir
 }
 else{
-    Remove-Item "$installdir\kics.exe" -ErrorAction SilentlyContinue
+    Remove-Item "$installdir\$tool.exe" -ErrorAction SilentlyContinue
+    Remove-Item "$installdir\license" -ErrorAction SilentlyContinue
+    Remove-Item "$installdir\README.md" -ErrorAction SilentlyContinue
+    Remove-Item "$installdir\assets\" -ErrorAction SilentlyContinue -Recurse
+
 }
 
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
-write-host "$(get-date) - getting $version"
+write-host "$(get-date) - Getting $version"
 Invoke-WebRequest -Uri $url -outfile $zipfile
 Unzip "$PSScriptRoot\$zipfile" $installdir
 Remove-Item "$PSScriptRoot\$zipfile"
