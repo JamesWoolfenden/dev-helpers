@@ -1,7 +1,7 @@
 $version=lastversion rke
 $name   ="rke"
 
-$url = "https://github.com/rancher/$name/releases/download/$version/$($name)_windows-amd64.exe"
+$url = "https://github.com/rancher/$name/releases/download/v$($version)/$($name)_windows-amd64.exe"
 
 Write-Output "$(get-date) - Getting $url"
 
