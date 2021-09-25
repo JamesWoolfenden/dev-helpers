@@ -2,10 +2,10 @@
 . ./banner.ps1
 
 Banner "Update Choco"
-cup all
+#cup all
 
-$packages=gci .\devtools\win\packages
-foreach($package in $packages) {
-   banner $package
-
+$packages = Get-ChildItem .\devtools\win\packages
+foreach ($package in $packages) {
+    banner $package.BaseName
+    & $($package.FullName)
 }
