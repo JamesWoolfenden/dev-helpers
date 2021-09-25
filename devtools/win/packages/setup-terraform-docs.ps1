@@ -16,7 +16,6 @@ try{
     cinst unzip
     unzip -o "$installdir\terraform-docs.zip" -d "$installdir"
     Remove-Item "$installdir\terraform-docs.zip"
-    Write-Output "$(get-date) - Now Update your path"
 }
 catch{
    write-error $_

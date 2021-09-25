@@ -16,7 +16,6 @@ try{
     Invoke-WebRequest -Uri $url -outfile "$installdir\$output" -verbose
     tar -xvzf "$installdir\$output"  -C $installdir
     & "$installdir\terrascan.exe" version
-    Write-Output "$(get-date) - Now Update your path"
     remove-item "$installdir\$output"
 }
 catch{

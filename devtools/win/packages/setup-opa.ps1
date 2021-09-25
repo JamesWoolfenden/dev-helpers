@@ -17,7 +17,6 @@ try {
     [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
     Invoke-WebRequest -Uri $url -outfile "$installdir\$tool.exe"
     & "$installdir\$tool.exe" version
-    Write-Output "$(get-date) - Now Update your path"
 }
 catch {
     write-error $_

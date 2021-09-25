@@ -6,12 +6,11 @@ param (
 )
 
 # requires lastversion and tar to be installed
-
 $tool="task"
 $version= lastversion $tool
 $zipfile= "task_windows_amd64.zip"
 $url    = "https://github.com/go-task/task/releases/download/v$($version)/$zipfile"
-
+Write-output $url
 remove-item "$installdir\$tool*"
 
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12

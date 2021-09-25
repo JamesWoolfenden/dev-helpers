@@ -11,6 +11,7 @@ $version=lastversion $tool
 $zipfile= "$($tool)-v$($version).zip"
 $url = "https://github.com/koalaman/$tool/releases/download/v$($version)/$zipfile"
 Write-output $url
+remove-item "$installdir\$tool*"
 
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
 Invoke-WebRequest -Uri $url -outfile $zipfile
