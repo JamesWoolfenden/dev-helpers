@@ -31,4 +31,4 @@ Remove-Item $zipfile
 write-output ""$installdir\$tool.exe""
 Move-Item "$tool*" "$installdir\$tool.exe"
 
-& "$tool.exe" --version
+& "$tool.exe" version
