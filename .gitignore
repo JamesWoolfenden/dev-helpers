@@ -8,3 +8,4 @@
 *.gz.1
 .vscode/
 .DS_Store
+*.zip
