@@ -1,22 +1,22 @@
-$url = "https://storage.googleapis.com/shellcheck/shellcheck-stable.zip"
-$installdir ="C:\tools\shellcheck"
-if (!(test-path $installdir))
-{
-    mkdir $installdir
-}else{
-    rm $installdir -force -recurse
-    mkdir $installdir
-}
+[CmdletBinding()]
+param (
+    [Parameter()]
+    [String]
+    $installdir="C:\tools\bin\"
+)
 
-push-location
-Set-Location $installdir
+# requires lastversion and tar to be installed
+$tool="shellcheck"
+$version=lastversion $tool
+$zipfile= "$($tool)-v$($version).zip"
+$url = "https://github.com/koalaman/$tool/releases/download/v$($version)/$zipfile"
+Write-output $url
 
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
-Invoke-WebRequest -Uri $url -outfile "$installdir\shellcheck-stable.zip"
-cinst unzip
-unzip.exe $installdir\shellcheck-stable.zip
-Remove-Item $installdir\shellcheck-stable.zip
-Pop-Location
-move-item "$installdir\shellcheck-stable.exe" "$installdir\shellcheck.exe"
-& "$installdir\shellcheck.exe" --version
-Write-Output "Now Update your path"
+Invoke-WebRequest -Uri $url -outfile $zipfile
+tar -xvf $zipfile
+Remove-Item $zipfile
+write-output ""$installdir\$tool.exe""
+Move-Item "$tool*" "$installdir\$tool.exe"
+
+& "$tool.exe" --version
