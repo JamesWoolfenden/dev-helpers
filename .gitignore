@@ -11,3 +11,7 @@
 *.zip
 *.msi
 *.exe
+assets/
+*.txt
+LICENSE
+CHANGELOG.md

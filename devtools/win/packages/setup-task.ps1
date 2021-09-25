@@ -1,27 +1,24 @@
-$version= lastversion task
+[CmdletBinding()]
+param (
+    [Parameter()]
+    [String]
+    $installdir="C:\tools\bin\"
+)
+
+# requires lastversion and tar to be installed
+
+$tool="task"
+$version= lastversion $tool
 $zipfile= "task_windows_amd64.zip"
-$url    = "https://github.com/go-task/task/releases/download/v$($Version)/$zipfile"
+$url    = "https://github.com/go-task/task/releases/download/v$($version)/$zipfile"
 
-Write-Output "$(get-date) - Getting $url"
-
-Add-Type -AssemblyName System.IO.Compression.FileSystem
-function Unzip
-{
-    param([string]$zipfile, [string]$outpath)
-
-    [System.IO.Compression.ZipFile]::ExtractToDirectory($zipfile, $outpath)
-}
-
-
-$installdir ="C:\tools\bin\"
-if (!(test-path $installdir))
-{
-    mkdir $installdir
-}
+remove-item "$installdir\$tool*"
 
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
 Invoke-WebRequest -Uri $url -outfile $zipfile
-Unzip "$PSScriptRoot\$zipfile" $installdir
-Remove-Item "$PSScriptRoot\$zipfile"
+tar -xvf $zipfile
+Remove-Item $zipfile
+write-output ""$installdir\$tool.exe""
+Move-Item "$tool*" "$installdir\$tool.exe"
 
-& "$installdir\task.exe" --version
+& "$tool.exe" --version
