@@ -1,6 +1,6 @@
 # dev-helpers
 
-[![Build Status](https://github.com/JamesWoolfenden/dev-helpers/workflows/Verify%20and%20Bump/badge.svg?branch=master)](https://github.com/JamesWoolfenden/dev-helpers)
+[![Build Status](https://github.com/JamesWoolfenden/dev-helpers/workflows/Bump/badge.svg?branch=master)](https://github.com/JamesWoolfenden/dev-helpers)
 [![Latest Release](https://img.shields.io/github/release/JamesWoolfenden/dev-helpers.svg)](https://github.com/JamesWoolfenden/dev-helpers/releases/latest)
 [![GitHub tag (latest SemVer)](https://img.shields.io/github/tag/JamesWoolfenden/dev-helpers.svg?label=latest)](https://github.com/JamesWoolfenden/dev-helpers/releases/latest)
 [![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)](https://github.com/pre-commit/pre-commit)
