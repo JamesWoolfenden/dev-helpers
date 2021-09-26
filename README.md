@@ -18,7 +18,7 @@ update.sh
 Or
 
 ```pwsh
-updates.ps1
+update.ps1
 ```
 
 There is also a pre-commit sample file in the root. To install this locally run:
