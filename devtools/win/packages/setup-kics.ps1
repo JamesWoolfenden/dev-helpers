@@ -17,6 +17,7 @@ if (!(test-path $installdir))
     mkdir $installdir
 }
 else{
+    Remove-Item "$installdir\assets\" -ErrorAction SilentlyContinue
     Remove-Item "$installdir\$tool.exe" -ErrorAction SilentlyContinue
     Remove-Item "$installdir\license" -ErrorAction SilentlyContinue
     Remove-Item "$installdir\README.md" -ErrorAction SilentlyContinue
@@ -30,5 +31,6 @@ tar -xvf $zipfile
 Remove-Item $zipfile
 write-output ""$installdir\$tool.exe""
 Move-Item "$tool*" "$installdir\$tool.exe"
+Move-Item "assets" "$installdir\"
 
 & "$tool.exe" version
