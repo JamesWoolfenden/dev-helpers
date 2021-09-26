@@ -1,23 +1,25 @@
-$version=lastversion terrascan
-$name="terraformer"
-$output="terrascan_$($version)_Windows_x86_64.tar.gz"
-$url = "https://github.com/accurics/terrascan/releases/download/v$version/$output"
+[CmdletBinding()]
+param (
+    [Parameter()]
+    [String]
+    $installdir="C:\tools\bin\"
+)
+
+# requires lastversion and tar to be installed
+
+$tool="terrascan"
+$version=lastversion $tool
+$zipfile="$($tool)_$($version)_Windows_x86_64.tar.gz"
+$url = "https://github.com/accurics/$tool/releases/download/v$version/$zipfile"
 Write-Output "$(get-date) - Getting $url"
 
-$installdir ="C:\tools\bin"
+remove-item "$installdir\$tool*"
 
-if (!(test-path $installdir))
-{
-    mkdir $installdir
-}
+[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
+Invoke-WebRequest -Uri $url -outfile $zipfile
+tar -xvf $zipfile
+Remove-Item $zipfile
+write-output ""$installdir\$tool.exe""
+Move-Item "$tool*" "$installdir\$tool.exe"
 
-try{
-    [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
-    Invoke-WebRequest -Uri $url -outfile "$installdir\$output" -verbose
-    tar -xvzf "$installdir\$output"  -C $installdir
-    & "$installdir\terrascan.exe" version
-    remove-item "$installdir\$output"
-}
-catch{
-   write-error $_
-}
+& "$tool.exe" version

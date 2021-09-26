@@ -18,6 +18,6 @@ Invoke-WebRequest -Uri $url -outfile $zipfile
 tar -xvf $zipfile
 Remove-Item $zipfile
 write-output ""$installdir\$tool.exe""
-Move-Item "$tool*" "$installdir\$tool.exe"
+Move-Item "$tool*" "$installdir\$tool.exe" -Force
 
 & "$tool.exe" --version
