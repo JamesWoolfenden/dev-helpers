@@ -21,9 +21,9 @@ install_or_upgrade gimme-aws-creds
 install_or_upgrade google-chrome
 install_or_upgrade google-cloud-sdk
 install_or_upgrade graphviz
-install_or_upgradehelm
+install_or_upgrade helm
 install_or_upgrade hub
-install_or_upgradeinfracost
+install_or_upgrade infracost
 install_or_upgrade iterm2
 install_or_upgrade jq
 install_or_upgrade kubernetes-helm
