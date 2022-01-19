@@ -1,5 +1,18 @@
-$version=lastversion tfsec
-$url = "https://github.com/tfsec/tfsec/releases/download/v$($version)/tfsec-windows-amd64.exe"
+[CmdletBinding()]
+param (
+    [Parameter()]
+    [string]
+    $version
+)
+
+if (!$version)
+{
+    $version=lastversion tfsec
+}
+
+Write-Output "Tfsec Version:$version"
+
+$url = "https://github.com/aquasecurity/tfsec/releases/download/v$($version)/tfsec-windows-amd64.exe"
 
 Write-Output "$(get-date) - Getting $url"
 
