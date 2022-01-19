@@ -40,6 +40,7 @@ install_or_upgrade terraform
 install_or_upgrade terraform-docs
 install_or_upgrade terraformer
 install_or_upgrade tfenv
+install_or_upgrade tfsec
 install_or_upgrade wget
 install_or_upgrade zoomus
 
