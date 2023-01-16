@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 set -exo
 rm -f *.tar.gz
-lastversion yor -d --assets
+pip3 install lastversion
+lastversion bridgecrewio/yor -d --assets
 
 tar -xzf $(find . -name *.tar.gz)
 sudo mv yor /usr/local/bin
